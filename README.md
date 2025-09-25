@@ -1,7 +1,7 @@
 # Python Expense Tracker
 
 A **command-line expense tracker** built in Python 3. 
-This project is designed to practice abd demonstrate core programming concepts including:
+This project is designed to practice and demonstrate core programming concepts including:
 
 - User input and validation
 - Data structures (lists, dictionaries)
@@ -17,13 +17,13 @@ This project is designed to practice abd demonstrate core programming concepts i
 ## Features (current & planned)
 
 - [x] Interactive CLI menu
-- [ ] Add expense (amount, category, description, date)
-- [ ] View all expenses
-- [ ] Input validation
+- [x] Add expense (amount, category, description, date)
+- [x] View all expenses
+- [x] Input validation
 - [ ] Save and load data from JSON
 - [ ] Reporting (totals, category summaries)
 - [ ] SQLite database support (future)
-- [ ] Unit tests with `pytesst`
+- [ ] Unit tests with `pytest`
 
 
 ---
@@ -31,8 +31,10 @@ This project is designed to practice abd demonstrate core programming concepts i
 
 ## Project Structure
 
-expesne-tracker/
+python-expense-tracker/
 |---- main.py # CLI entry point
+|---- tracker.py # Expense operations (add/view)
+|---- expense.py # Expense class
 |---- README.md # Documentation
 |____ .gitignore #Ignore build/runtime files
 
