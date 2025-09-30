@@ -2,7 +2,7 @@
 
 """
 Main entry point for the Python Expense Tracker CLI application.
-Handles the user interface loop and delegates functionaity to 
+Handles the user interface loop and delegates functionality to 
 tracker.py.
 """
 
@@ -10,14 +10,14 @@ from tracker import add_expense, view_expenses
 
 
 def main():
-    # Run the main CLI menu loop.
-    
+    """Run the main CLI menu loop."""
+
     while True:
         print("\n====== Python Expense Tracker ======")
         print("1. Add Expense")
         print("2. View Expenses")
         print("3. Quit")
-        
+
         choice = input("Select an option (1-3)>")
 
         if choice == "1":
@@ -28,7 +28,8 @@ def main():
             print("Exiting Expense Tracker. Goodbye!")
             break
         else:
-            print("Invalid option. Please try again." )
+            print("Invalid option. Please try again.")
+
 
 if __name__ == "__main__":
     main()
