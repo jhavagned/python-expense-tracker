@@ -19,7 +19,7 @@ This project is designed to practice and demonstrate core programming concepts i
 - [x] View all expenses
 - [x] Input validation
 - [x] Save and load data from JSON
-- [ ] Reporting (totals, category summaries)
+- [x] Reporting (totals, category summaries)
 - [ ] SQLite database support (future)
 - [ ] Unit tests with `pytest`
 

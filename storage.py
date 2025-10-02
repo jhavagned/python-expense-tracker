@@ -2,8 +2,13 @@
 
 import json
 import os
+from dotenv import load_dotenv
 
-EXPENSES_FILE = os.path.join(os.path.dirname(__file__), 'expenses.json')
+# Load environment variables from .env
+load_dotenv()
+
+EXPENSES_FILE = os.getenv("EXPENSES_FILE", os.path.join(
+    os.path.dirname(__file__), "expenses.json"))
 
 
 def save_expenses_to_json(expenses, file_path=EXPENSES_FILE):
