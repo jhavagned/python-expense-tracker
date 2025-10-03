@@ -24,8 +24,15 @@ def load_expenses_from_json(file_path=EXPENSES_FILE):
     """Load expenses from JSON file, return list."""
     try:
         if os.path.exists(file_path):
-            with open(EXPENSES_FILE, "r", encoding="utf-8") as file:
+            with open(file_path, "r", encoding="utf-8") as file:
                 return json.load(file)
-    except (FileNotFoundError, PermissionError, json.JSONDecodeError) as e:
+        else:
+            # File missing, return empty list
+            return []
+    except json.JSONDecodeError:
+        print(
+            f"Warning: {file_path} is corrupted or not valid JSON. Please fix the file manually.")
+        return []
+    except (FileNotFoundError, PermissionError) as e:
         print(f"Error loading expenses: {e}")
     return []

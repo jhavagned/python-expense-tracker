@@ -7,6 +7,7 @@ Provides functions to add and view expenses.
 
 from expense import Expense
 from storage import save_expenses_to_json, load_expenses_from_json
+from tabulate import tabulate
 
 # Temporary in-memory list to store expenses
 expenses = load_expenses_from_json()
@@ -50,7 +51,11 @@ def view_expenses():
     """Display all recorded expenses"""
     if not expenses:
         print("No available expenses at the moment.")
-    else:
-        for i, expense in enumerate(expenses, 1):
-            print(
-                f"{i}. {expense['date']} | {expense['category']} | ${expense['amount']:.2f} | {expense['description'] or 'No description'}")
+        return
+
+    # Convert expense dicts into rows
+    table_data = [[i+1, e['date'], e['category'],
+                   f"${e['amount']:.2f}", e['description'] or "No description"] for i, e in enumerate(expenses)]
+
+    headers = ["#", "Date", "Category", "Amount", "Description"]
+    print(tabulate(table_data, headers=headers, tablefmt="grid"))
